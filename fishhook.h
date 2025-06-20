@@ -47,6 +47,14 @@ struct rebinding {
   void **replaced;
 };
 
+struct rebindings_entry {
+  struct rebinding *rebindings;
+  size_t rebindings_nel;
+  struct rebindings_entry *next;
+};
+
+extern struct rebindings_entry *_rebindings_head;
+
 /*
  * For each rebinding in rebindings, rebinds references to external, indirect
  * symbols with the specified name to instead point at replacement for each

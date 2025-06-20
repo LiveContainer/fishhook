@@ -58,13 +58,9 @@ typedef struct nlist nlist_t;
 #define SEG_DATA_CONST  "__DATA_CONST"
 #endif
 
-struct rebindings_entry {
-  struct rebinding *rebindings;
-  size_t rebindings_nel;
-  struct rebindings_entry *next;
-};
 
-static struct rebindings_entry *_rebindings_head;
+
+struct rebindings_entry *_rebindings_head;
 
 static int prepend_rebindings(struct rebindings_entry **rebindings_head,
                               struct rebinding rebindings[],
